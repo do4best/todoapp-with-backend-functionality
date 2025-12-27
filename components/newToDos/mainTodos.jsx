@@ -10,6 +10,7 @@ function MainTodos() {
             <Header/>
             <main>
                 <Formdata/>
+                <h1>Results</h1>
                 <ListOfResults/>
             </main>
             <Footer/>
