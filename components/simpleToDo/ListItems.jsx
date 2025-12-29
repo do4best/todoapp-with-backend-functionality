@@ -7,53 +7,52 @@ import ListItemText from '@mui/material/ListItemText';
 import Checkbox from '@mui/material/Checkbox';
 import IconButton from '@mui/material/IconButton';
 import CommentIcon from '@mui/icons-material/Comment';
+import {TextField,Grid} from "@mui/material";
+import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 
-export default function ListItems() {
-    const [checked, setChecked] = React.useState([0]);
+export default function ListItems({todoList, handelDelete, handelTodo}) {
 
-    const handleToggle = (value) => () => {
-        const currentIndex = checked.indexOf(value);
-        const newChecked = [...checked];
-
-        if (currentIndex === -1) {
-            newChecked.push(value);
-        } else {
-            newChecked.splice(currentIndex, 1);
-        }
-
-        setChecked(newChecked);
-    };
 
     return (
+        <Grid container spacing={2} justifyContent="center" alignItems="center" sx={{ mt: 10 }}>
         <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
-            {[0, 1, 2, 3].map((value) => {
-                const labelId = `checkbox-list-label-${value}`;
+            {todoList.map((value) => {
+                const labelId = `checkbox-list-label-${value.id}`;
+
 
                 return (
                     <ListItem
-                        key={value}
+                        key={value.id}
                         secondaryAction={
-                            <IconButton edge="end" aria-label="comments">
-                                <CommentIcon />
+                            <IconButton edge="end" aria-label="delete" onClick={() => handelDelete(value.id)}>
+                                <DeleteOutlineIcon/>
                             </IconButton>
                         }
-                        disablePadding
+
                     >
-                        <ListItemButton role={undefined} onClick={handleToggle(value)} dense>
+                        <ListItemButton role={undefined} onClick={() => handelTodo(value.id)} dense>
                             <ListItemIcon>
                                 <Checkbox
                                     edge="start"
-                                    checked={checked.includes(value)}
+                                    checked={value.isDone}
                                     tabIndex={-1}
                                     disableRipple
                                     inputProps={{ 'aria-labelledby': labelId }}
                                 />
                             </ListItemIcon>
-                            <ListItemText id={labelId} primary={`Line item ${value + 1}`} />
+                            <ListItemText
+                                id={labelId}
+                                primary={`Line item ${value.item}`}
+                                sx={{
+                                    textDecoration: value.isDone ? 'line-through' : 'none',
+                                    bgcolor: value.isDone ? 'red' : 'white'
+                                }}
+                            />
                         </ListItemButton>
                     </ListItem>
                 );
             })}
         </List>
+        </Grid>
     );
 }

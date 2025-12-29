@@ -10,15 +10,37 @@ function MainSimpleToDo() {
     const [toDoList, setToDoList] = useState([])
 
     const addToList = () => {
+        if (text.trim() === "") {
+            alert("Please Input Something");
+            return;
+        }
         const newToDo = {id:Math.floor(Math.random()*800),
         item:text,
         isDone:false}
         setToDoList([...toDoList,newToDo])
+        setText('')
     }
     console.log("ToDoList  : ",toDoList)
+
+    const handelTodo = (valueId) => {
+        const newToDo = toDoList.map((item)=>{
+            if (item.id === valueId){
+                return {...item,isDone:!item.isDone}
+            }
+            return item
+        })
+        setToDoList(newToDo)
+
+
+    }
+
+    const handelDelete = (valueId) => {
+        const newToDo = toDoList.filter(item => item.id !== valueId)
+        setToDoList(newToDo)
+    }
     return (
         <>
-        <Typography variant="h1" textAlign={"center"} color={"success"} border={"red"} margin={"5"}>ToDo's List</Typography>
+        <Typography variant="h1" color={"success"} sx={{ border: "red", m: 5, textAlign: "center" }}>ToDo's List</Typography>
 
            <Grid container spacing={2} justifyContent="center" alignItems="center">
                <Grid size={{xs: 12, md: 8}} textAlign={"center"}>
@@ -27,9 +49,12 @@ function MainSimpleToDo() {
 
                    <Button  onClick={addToList} variant="contained" size={"large"}>Add</Button>
                        </Box>
+
            </Grid>
-               <ListItems/>
+
            </Grid>
+            <ListItems todoList={toDoList} handelDelete={handelDelete} handelTodo={handelTodo}/>
+
 
         </>
     );
