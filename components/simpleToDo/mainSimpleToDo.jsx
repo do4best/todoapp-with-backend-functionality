@@ -9,7 +9,7 @@ function MainSimpleToDo() {
     const [text, setText] = useState('')
     const [toDoList, setToDoList] = useState([])
 
-    const addToList = () => {
+    const addToList = () => {// this function will invoke when user click on add button
         if (text.trim() === "") {
             alert("Please Input Something");
             return;
