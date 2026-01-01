@@ -1,18 +1,16 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import Typography from "@mui/material/Typography";
+import Manager from "./Manager.jsx";
+import  {MyContext} from "./bossContext.jsx";
 
 function Boss() {
-    const SalaryDetails ={
-        Designation:"CEO",
-        salary:1000000,
-        bonus:100000,
-        pension:10000
-    };
+const data=   useContext(MyContext)
+    console.log(data);
     return (
         <>
 
-                <Typography variant="h4" color={"success"} sx={{ border: "red", m: 5, textAlign: "center" }} >His Salary is {SalaryDetails}</Typography>
-
+                <Typography variant="h1" color={"success"} sx={{ border: "red", m: 5, textAlign: "center" }} >Boss Position is {data.SalaryDetails.Designation} </Typography>
+<Manager />
         </>
     );
 }
