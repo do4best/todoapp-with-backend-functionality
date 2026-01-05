@@ -1,4 +1,4 @@
-import React from 'react';
+
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import {TextField} from "@mui/material";
@@ -6,8 +6,11 @@ import Header from "./Header.jsx";
 import Footer from "./Footer.jsx";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
+import List from "@mui/material/List";
+import ListofResult from "./listofResult.jsx";
 
 function MainToDoApp() {
+
     return (
         <>
           <Container>
@@ -34,7 +37,7 @@ function MainToDoApp() {
                     <TextField id="outlined-basic3" label="Price" variant="outlined" sx={{ width: '100%', maxWidth: '400px' }} />
                     <Button variant="contained" sx={{ width: '100%', maxWidth: '400px' }}>Submit</Button>
 
-                       <Typography variant="h3" sx={{mt:2}}> Results :</Typography>
+                    <ListofResult/>
 
                 </Box>
 
