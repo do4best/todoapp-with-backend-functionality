@@ -6,6 +6,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import React, {useEffect, useState} from 'react';
+import Button from "@mui/material/Button";
 
 
 function ListofResult() {
@@ -58,6 +59,7 @@ function ListofResult() {
                                 <TableCell align="right">{row.SupplierId}</TableCell>
                                 <TableCell align="right">{row.CategoryId}</TableCell>
                                 <TableCell align="right">{row.unit}</TableCell>
+                                <Button variant={"contained"} color={"primary"} name={row.ProductName} onClick={handelDelete}>Press</Button>
                             </TableRow>
                         ))}
                     </TableBody>

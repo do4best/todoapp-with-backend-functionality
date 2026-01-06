@@ -8,6 +8,7 @@ import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import List from "@mui/material/List";
 import ListofResult from "./listofResult.jsx";
+import FormData from "./formData.jsx";
 
 function MainToDoApp() {
 
@@ -30,13 +31,7 @@ function MainToDoApp() {
                     alignItems: 'center',     // Centers horizontally
                     gap: 2
                 }}>
-                    <TextField id="outlined-basic1" label="Product Name" variant="outlined" sx={{ width: '100%', maxWidth: '400px' }} />
-                    <TextField id="outlined-basic2" label="Supplier ID" variant="outlined" sx={{ width: '100%', maxWidth: '400px' }} />
-                    <TextField id="outlined-basic3" label="Catagory ID" variant="outlined" sx={{ width: '100%', maxWidth: '400px' }} />
-                    <TextField id="outlined-basic3" label="Unit" variant="outlined" sx={{ width: '100%', maxWidth: '400px' }} />
-                    <TextField id="outlined-basic3" label="Price" variant="outlined" sx={{ width: '100%', maxWidth: '400px' }} />
-                    <Button variant="contained" sx={{ width: '100%', maxWidth: '400px' }}>Submit</Button>
-
+                    <FormData/>
                     <ListofResult/>
 
                 </Box>
