@@ -55,11 +55,11 @@ function ListofResult() {
                                 <TableCell component="th" scope="row">
                                     {row.name}
                                 </TableCell>
-                                <TableCell align="right">{row.ProductName}</TableCell>
+                                <TableCell align="right">{row.ProductId}</TableCell>
                                 <TableCell align="right">{row.SupplierId}</TableCell>
                                 <TableCell align="right">{row.CategoryId}</TableCell>
                                 <TableCell align="right">{row.unit}</TableCell>
-                                <Button variant={"contained"} color={"primary"} name={row.ProductName} onClick={handelDelete}>Press</Button>
+                                <Button variant={"contained"} color={"primary"} name={row.ProductId} onClick={handelDelete}>Press</Button>
                             </TableRow>
                         ))}
                     </TableBody>
