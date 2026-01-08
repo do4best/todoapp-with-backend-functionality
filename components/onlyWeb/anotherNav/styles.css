@@ -1,0 +1,40 @@
+*{
+box-sizing: border-box;
+}
+body{
+    margin: 0;
+}
+.nav{
+    background-color: aqua;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 0 1rem;
+
+}
+.site-title{
+    font-size: 3rem;
+}
+.nav ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+.nav a{
+    color: inherit;
+    text-decoration: none;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+}
+.nav li:hover{
+    color: #646cff;
+}
+.nav li.active{
+    color: red;
+}
