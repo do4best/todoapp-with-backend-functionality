@@ -31,7 +31,7 @@ const search = (callback)=>{
     });
 };
 // /////////////// Insert Data
-const insertData = db.prepare('INSERT INTO Products (ProductName,SupplierId,CategoryID,Unit,price) VALUES (?,?,?,?,?)',(err)=>{
+const insertData = db.prepare('INSERT INTO Products (ProductId,SupplierId,CategoryID,Unit,price) VALUES (?,?,?,?,?)',(err)=>{
     if(err){
         console.error(err);
     }else{

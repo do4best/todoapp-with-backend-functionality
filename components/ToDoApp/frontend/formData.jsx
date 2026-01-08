@@ -62,7 +62,7 @@ function FormData() {
     return (
         <>
 
-                    <TextField id="outlined-basic1" name={"ProductName"} value={dataToInsert.ProductId} label="Product Name" variant="outlined" sx={{ width: '100%', maxWidth: '400px' }} onChange={handelChange} required />
+                    <TextField id="outlined-basic1" name={"ProductId"} value={dataToInsert.ProductId} label="Product Name" variant="outlined" sx={{ width: '100%', maxWidth: '400px' }} onChange={handelChange} required />
                     <TextField id="outlined-basic2" name={"SupplierId"} value={dataToInsert.SupplierId} label="Supplier ID" variant="outlined" sx={{ width: '100%', maxWidth: '400px' }} onChange={handelChange} required/>
                     <TextField id="outlined-basic3" name={"CategoryId"} value={dataToInsert.CategoryId} label="Catagory ID" variant="outlined" sx={{ width: '100%', maxWidth: '400px' }} onChange={handelChange} required/>
                     <TextField id="outlined-basic3" name={"UnitId"} value={dataToInsert.UnitId} label="Unit" variant="outlined" sx={{ width: '100%', maxWidth: '400px' }}  onChange={handelChange} required/>

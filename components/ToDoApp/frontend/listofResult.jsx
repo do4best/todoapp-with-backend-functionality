@@ -21,7 +21,7 @@ function ListofResult() {
         console.log(id.target.name);
         if (confirm("Are you sure to delete this record ?")){
             console.log("Deleted");
-            fetch(`http://localhost:3000`, {
+            fetch(`http://localhost:3000/`, {
                 method: "PUT",
                 body:JSON.stringify({["ProductId"]:id.target.name}),
                 headers: {
@@ -49,11 +49,11 @@ function ListofResult() {
                     <TableBody>
                         {results.map((row) => (
                             <TableRow
-                                key={row.name}
+                                key={row.ProductId}
                                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                             >
                                 <TableCell component="th" scope="row">
-                                    {row.name}
+                                    {row.ProductName}
                                 </TableCell>
                                 <TableCell align="right">{row.ProductId}</TableCell>
                                 <TableCell align="right">{row.SupplierId}</TableCell>
